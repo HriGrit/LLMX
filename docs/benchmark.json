@@ -1,0 +1,22 @@
+{
+  "runtime": "v24.19.0",
+  "platform": "linux",
+  "architecture": "x64",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "iterations": 2000,
+  "network": "none; injected in-memory HTTP fixtures; includes fixture serialization and Response parsing",
+  "results": [
+    {
+      "mode": "disabled",
+      "p50Ms": 0.0599030000000198,
+      "p95Ms": 0.33384699999999157,
+      "p99Ms": 0.8438109999999597
+    },
+    {
+      "mode": "buffered-export",
+      "p50Ms": 0.0674619999999777,
+      "p95Ms": 0.22950200000002496,
+      "p99Ms": 1.1356020000000058
+    }
+  ]
+}

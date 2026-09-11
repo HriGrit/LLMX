@@ -1,0 +1,59 @@
+{
+  "name": "@hrigrit/llmx",
+  "version": "0.1.0",
+  "description": "Lightweight, provider-neutral LLM API execution runtime",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./providers/*": {
+      "types": "./dist/providers/*.d.ts",
+      "import": "./dist/providers/*.js"
+    },
+    "./telemetry/*": {
+      "types": "./dist/telemetry/*.d.ts",
+      "import": "./dist/telemetry/*.js"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.js"
+    }
+  },
+  "files": [
+    "dist",
+    "cli",
+    "README.md",
+    "docs",
+    "examples"
+  ],
+  "bin": {
+    "llmx": "./cli/index.mjs"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && npm run typecheck && node --test test/*.test.mjs",
+    "benchmark": "npm run build && node benchmarks/runtime.mjs",
+    "prepack": "npm run build",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "docs": "npm run build && node scripts/api-docs.mjs",
+    "format": "prettier --write src test cli examples scripts benchmarks",
+    "format:check": "prettier --check src test cli examples scripts benchmarks"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3",
+    "valibot": "^1.5.0",
+    "zod": "^4.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HriGrit/LLMX.git"
+  },
+  "license": "UNLICENSED"
+}
