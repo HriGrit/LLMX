@@ -1,5 +1,5 @@
 {
-  "name": "@hrigrit/llmx",
+  "name": "@ayushsoam51/llmx",
   "version": "0.1.0",
   "description": "Lightweight, provider-neutral LLM API execution runtime",
   "type": "module",
