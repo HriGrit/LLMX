@@ -17,16 +17,16 @@ npm run benchmark
 npm pack
 ```
 
-Install the resulting `hrigrit-llmx-0.1.0.tgz` into your application. The scoped name `@hrigrit/llmx` is provisional; registry availability and publishing ownership have not been verified.
+Install the resulting `ayushsoam51-llmx-0.1.0.tgz` into your application. The package is published under Ayush's verified npm scope: `@ayushsoam51/llmx`.
 
 The core has **zero runtime dependencies**. TypeScript, Prettier, Zod, and Valibot are development tools; the two validation libraries are used only to verify interoperability.
 
 ## One gateway file
 
 ```ts
-import { createGateway } from '@hrigrit/llmx';
-import { openai } from '@hrigrit/llmx/providers/openai';
-import { gemini } from '@hrigrit/llmx/providers/gemini';
+import { createGateway } from '@ayushsoam51/llmx';
+import { openai } from '@ayushsoam51/llmx/providers/openai';
+import { gemini } from '@ayushsoam51/llmx/providers/gemini';
 
 export const llm = createGateway({
   providers: {
@@ -116,7 +116,7 @@ logging: {
 Full inspection captures the serialized outbound body just before transport. Credentials in standard authentication headers and secret query parameters are redacted. Metadata is the default; no sink or exporter is enabled implicitly. Full mode requires application-specific redaction of sensitive prompt content. See [privacy and failure semantics](docs/ARCHITECTURE.md).
 
 ```ts
-import { langfuse } from '@hrigrit/llmx/telemetry/langfuse';
+import { langfuse } from '@ayushsoam51/llmx/telemetry/langfuse';
 // Add to createGateway:
 telemetry: { exporters: [langfuse({
   publicKey: process.env.LANGFUSE_PUBLIC_KEY!,
