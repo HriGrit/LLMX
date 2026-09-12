@@ -92,7 +92,7 @@ try {
   else if (command === "init") {
     print(await scan());
     const target = value("--out", "llmx.config.mjs");
-    const source = `import { createGateway } from '@hrigrit/llmx';\nimport { openai } from '@hrigrit/llmx/providers/openai';\n\nexport default createGateway({\n  providers: { primary: openai({ apiKey: process.env.OPENAI_API_KEY }) },\n  models: { main_model: { provider: 'primary', model: process.env.LLM_MODEL } },\n  limits: { concurrency: 10, rpm: 60, tpm: 100000, queueSize: 100 },\n  logging: { payloads: 'metadata' },\n});\n`;
+    const source = `import { createGateway } from '@ayushsoam51/llmx';\nimport { openai } from '@ayushsoam51/llmx/providers/openai';\n\nexport default createGateway({\n  providers: { primary: openai({ apiKey: process.env.OPENAI_API_KEY }) },\n  models: { main_model: { provider: 'primary', model: process.env.LLM_MODEL } },\n  limits: { concurrency: 10, rpm: 60, tpm: 100000, queueSize: 100 },\n  logging: { payloads: 'metadata' },\n});\n`;
     console.log(`Create ${target}:\n${source}`);
     if (await confirm("Create this configuration file?")) {
       await writeFile(target, source, { flag: "wx" });
